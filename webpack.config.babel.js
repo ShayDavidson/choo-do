@@ -5,19 +5,17 @@ export default {
     filename: 'index.js'
   },
   module: {
-    loaders: [
-      {
-        loader: 'babel-loader',
-        include: './src',
-        test: /\.js$/,
-        query: {
-          cacheDirectory: true
-        }
+    loaders: [{
+      test: /\.js$/,
+      include: /(src)/,
+      loader: 'babel',
+      query: {
+        cacheDirectory: true
       }
-    ]
+    }]
   },
   resolve: {
-    modulesDirectories: ['src', 'node_modules'],
+    modulesDirectories: ['.', 'src', 'node_modules'],
     extensions: ['', '.js']
   },
   devtool: 'source-map'
